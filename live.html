@@ -21,6 +21,7 @@
 </head>
 <body>
   <h1>LIVE RACE:</h1>
+  <p>NOTE: this feature is still in development, so may be very very buggy.</p>
 
   <div class="player">
     <video id="video" controls autoplay muted></video>
@@ -39,7 +40,7 @@
     const video = document.getElementById("video");
     const radio = document.getElementById("radio");
     radio.src = "https://stream.live.vc.bbcmedia.co.uk/bbc_radio_five_sports_extra";
-    const stream = "https://test-streams.mux.dev/x36xhzz/x36xhzz.m3u8"; // only for testing
+    const stream = ""; // TODO: add a link here once rtbf starts broadcasting (that means im waking up at 7am on a sunday but not as bad as waking up at 4am to watch the australian gp)
 
     if (Hls.isSupported()) {
       const hls = new Hls();
