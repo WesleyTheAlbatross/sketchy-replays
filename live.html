@@ -2,65 +2,19 @@
 <html>
 <head>
   <title>Live</title>
-  <style>
-    .player {
-      width: 560px;
-      height: 315px;
-    }
-
-    .player video {
-      width: 100%;
-      height: 100%;
-      background: black;
-    }
-
-    .buttons {
-      margin: 10px 0;
-    }
-  </style>
 </head>
 <body>
   <h1>LIVE RACE:</h1>
-  <p>NOTE: this feature is still in development, so may be very very buggy.</p>
-
-  <div class="player">
-    <video id="video" controls autoplay muted></video>
-  </div>
-
-  <div class="buttons">
-    <button onclick="setStation('live')">BBC Radio 5 Live</button>
-    <button onclick="setStation('extra')">BBC Radio 5 Sports Extra</button>
-    <p>switch these depending on what sport is broadcasted on which station</p>
-  </div>
-
-  <audio id="radio" autoplay></audio>
-
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <script>
-    const video = document.getElementById("video");
-    const radio = document.getElementById("radio");
-    radio.src = "https://stream.live.vc.bbcmedia.co.uk/bbc_radio_five_sports_extra";
-    const stream = ""; // TODO: add a link here once rtbf starts broadcasting (that means im waking up at 7am on a sunday but not as bad as waking up at 4am to watch the australian gp)
-
-    if (Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource(stream);
-      hls.attachMedia(video);
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = stream;
-    }
-
-    video.addEventListener("play", () => radio.play());
-    video.addEventListener("pause", () => radio.pause());
-
-    function setStation(type) {
-      if (type === 'live') {
-        radio.src = "https://stream.live.vc.bbcmedia.co.uk/bbc_radio_five_live";
-      } else if (type === 'extra') {
-        radio.src = "https://stream.live.vc.bbcmedia.co.uk/bbc_radio_five_sports_extra";
-      }
-      radio.play();
-    }
-  </script>
+  <p>NOTE: this feature is still in development, so may be very very buggy, the stream may not load, or anything like that. 
+  i cannot do anything about it so PLEASE do not tell me anything like "oh it aint working" it probaby isnt, ok? and thats fine.</p>
+  <h3>Race:</h3>
+	<iframe 
+	  src="https://dlstreams.top/stream/stream-60.php"
+	  width=560
+	  height=315
+	  sandbox="allow-scripts allow-fullscreen allow-same-origin"
+	  allow="fullscreen"
+	  allowfullscreen>
+	</iframe>
 </body>
 </html>
