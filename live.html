@@ -1,19 +1,31 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <title>Live</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Live Race | Sketchy F1</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>LIVE RACE:</h1>
-  <p>NOTE: this feature is still in development, so may be very very buggy, the stream may not load, or anything like that. 
-  i cannot do anything about it so PLEASE do not tell me anything like "oh it aint working" it probaby isnt, ok? and thats fine.</p>
-  <h3>Race:</h3>
-	<iframe 
-	  src="https://embedsports.top/embed/echo/race-shanghai-international-circuit-3051-kms-formula-1-2526/1"
-	  width=560
-	  height=315
-	  allow="fullscreen"
-	  allowfullscreen>
-	</iframe>
+  <div class="container">
+    <a href="index.html" class="back-link">← Back to Home</a>
+    
+    <h1>Live Race</h1>
+    
+    <div id="race-info">
+      <div class="card" id="loading-indicator">
+        <p>Loading race information...</p>
+      </div>
+      <p id="last-update" class="last-update"></p>
+    </div>
+    
+    <div id="stream-info"></div>
+    
+    <footer>
+      <p>Not affiliated with Formula 1. For educational purposes only.</p>
+    </footer>
+  </div>
+  
+  <script src="f1-data.js"></script>
 </body>
 </html>
